@@ -48,7 +48,7 @@ $app->post('/video/{latitude}/{longitude}', function ($request, $response, $args
 	$newfile = $files['video'];
 	if ($newfile->getError() === UPLOAD_ERR_OK) {
     $uploadFileName = $newfile->getClientFilename();
-    $newfile->moveTo("/var/www/hackdfw2016/GeoClipsAPI/videos/$filename");
+    $newfile->moveTo("/var/www/html/hackdfw2016/GeoClipsAPI/videos/$filename");
 }
     // do something with $newfile
 	return $response;
@@ -56,7 +56,7 @@ $app->post('/video/{latitude}/{longitude}', function ($request, $response, $args
 
 $app->get('/video/{filename}', function($request, $response, $args) {
 	$filename = $args['filename'];
-    $file = "/var/www/hackdfw2016/GeoClipsAPI/videos/$filename";
+    $file = "/var/www/html/hackdfw2016/GeoClipsAPI/videos/$filename";
     $response = $response->withHeader('Content-Description', 'File Transfer')
    ->withHeader('Content-Type', 'application/octet-stream')
    ->withHeader('Content-Disposition', 'attachment;filename="'.basename($file).'"')
