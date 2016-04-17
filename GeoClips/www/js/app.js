@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('GeoClips', ['ionic', 'GeoClips.controllers', 'ionic-material'])
+angular.module('GeoClips', ['ionic', 'GeoClips.controllers', 'ionic-material', 'ngCordova' ])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
