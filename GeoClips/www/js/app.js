@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('GeoClips', ['ionic', 'GeoClips.controllers', 'ionic-material', 'ngCordova' ])
+angular.module('GeoClips', ['ionic', 'GeoClips.controllers', 'ionic-material', 'ngCordova', "GeoClips.services" ])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -27,7 +27,7 @@ angular.module('GeoClips', ['ionic', 'GeoClips.controllers', 'ionic-material', '
 .config(function($stateProvider, $urlRouterProvider) {
   
     // For any unmatched url, redirect to /state1
-  $urlRouterProvider.otherwise("discovery");
+  $urlRouterProvider.otherwise("record");
   
   // Now set up the states
   $stateProvider
